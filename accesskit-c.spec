@@ -75,7 +75,8 @@ export CARGO_HOME="$(pwd)/.cargo"
 export PKG_CONFIG_ALLOW_CROSS=1
 
 %meson \
-	%{!?with_static_libs:--default-library=shared}
+	%{!?with_static_libs:--default-library=shared} \
+	-Dtriplet=%{rust_target}
 
 %meson_build
 
