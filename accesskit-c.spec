@@ -17,7 +17,7 @@ Source1:	%{name}-%{version}-vendor.tar.xz
 # Source1-md5:	e1f82efe10935acc5388d87ff41ec4f6
 URL:		https://github.com/AccessKit/accesskit-c
 BuildRequires:	cargo
-BuildRequires:	cmake >= 3.20
+BuildRequires:	meson >= 1.3.0
 BuildRequires:	pkgconfig
 BuildRequires:	rpmbuild(macros) >= 1.605
 BuildRequires:	rust >= 1.77.2
