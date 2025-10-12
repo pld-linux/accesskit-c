@@ -19,8 +19,9 @@ URL:		https://github.com/AccessKit/accesskit-c
 BuildRequires:	cargo
 BuildRequires:	meson >= 1.3.0
 BuildRequires:	pkgconfig
-BuildRequires:	rpmbuild(macros) >= 1.605
+BuildRequires:	rpmbuild(macros) >= 2.050
 BuildRequires:	rust >= 1.77.2
+%{?rust_req}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
