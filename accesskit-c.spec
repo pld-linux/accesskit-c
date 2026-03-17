@@ -5,16 +5,17 @@
 Summary:	UI accessibility infrastructure (C API library)
 Summary(pl.UTF-8):	Infrastruktura dostępności UI (biblioteka API dla języka C)
 Name:		accesskit-c
-Version:	0.17.0
+# gtk4 4.22 expects 0.18.x
+Version:	0.18.0
 Release:	1
 License:	Apache v2.0 or MIT, BSD
 Group:		Libraries
 #Source0Download: https://github.com/AccessKit/accesskit-c/releases
 Source0:	https://github.com/AccessKit/accesskit-c/archive/%{version}/%{name}-%{version}.tar.gz
-# Source0-md5:	f8c1df8d1ee82bab0fada1cb92dfeb23
+# Source0-md5:	84e24c109ff702aa971ece9108bb470a
 # cargo vendor-filterer --platform='*-unknown-linux-*' --tier=2
 Source1:	%{name}-%{version}-vendor.tar.xz
-# Source1-md5:	e1f82efe10935acc5388d87ff41ec4f6
+# Source1-md5:	fa1d4ca2423264a17a13ece851331df9
 URL:		https://github.com/AccessKit/accesskit-c
 BuildRequires:	cargo
 BuildRequires:	meson >= 1.3.0
@@ -98,17 +99,17 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc AUTHORS CHANGELOG.md LICENSE-MIT LICENSE.chromium README.md
-%attr(755,root,root) %{_libdir}/libaccesskit-c-0.17.so.*.*.*
-%ghost %{_libdir}/libaccesskit-c-0.17.so.0
+%{_libdir}/libaccesskit-c-0.18.so.*.*.*
+%ghost %{_libdir}/libaccesskit-c-0.18.so.0
 
 %files devel
 %defattr(644,root,root,755)
-%{_libdir}/libaccesskit-c-0.17.so
-%{_includedir}/accesskit-c-0.17
-%{_pkgconfigdir}/accesskit-c-0.17.pc
+%{_libdir}/libaccesskit-c-0.18.so
+%{_includedir}/accesskit-c-0.18
+%{_pkgconfigdir}/accesskit-c-0.18.pc
 
 %if %{with static_libs}
 %files static
 %defattr(644,root,root,755)
-%{_libdir}/libaccesskit-c-0.17.a
+%{_libdir}/libaccesskit-c-0.18.a
 %endif
